@@ -1,2 +1,2 @@
 # NXOS
-Script for Cisco Nexus NXOS
+Scripts for Cisco Nexus NXOS
