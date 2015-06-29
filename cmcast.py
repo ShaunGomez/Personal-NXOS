@@ -12,3 +12,4 @@ cli("clear ip mroute data-created "+mcast_g)
 cli("clear ip igmp route "+mcast_g)
 print 'All Multicast State Cleared For:'
 print mcast_g
+print 'Thank You! Come again'
