@@ -1,6 +1,6 @@
 import sys
 from cisco import cli
-# v1.0
+# v1.1
 # Shaun Gomez
 #
 #clear multicast state for given group on NXOS
