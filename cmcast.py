@@ -3,8 +3,9 @@ from cisco import cli
 from cisco import clip
 # v2.0
 # Shaun Gomez
+# John Senkow
 #
-#clear all multicast state for given group on NXOS
+# Clear all multicast state for given group on NXOS
 #
 #
 mcast_g = str(sys.argv[1])
