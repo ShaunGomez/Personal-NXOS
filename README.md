@@ -53,9 +53,8 @@ Returning optical light levels for ...
 
 Ethernet 1/1
 
-** **
-
   Tx Power       -5.03 dBm       0.00 dBm  -13.56 dBm   -3.00 dBm     -9.50 dBm
+** **   
   Rx Power      -30.00 dBm --    2.99 dBm  -21.54 dBm    0.00 dBm    -16.98 dBm
 
  
