@@ -16,8 +16,10 @@ cli("clear ip igmp route "+mcast_g)
 cli("clear ip igmp groups "+mcast_g)
 print 'All Multicast State Cleared For:'
 print mcast_g
-print 'Verification of State Clear'
-time.sleep(30)
+print 'Verification of State Clear, Please Wait 45 Seconds to Complete'
+for a in xrange(45,0,-1):
+	time.sleep(1)
+	print a
 clip("show ip igmp groups "+mcast_g)
 clip("show ip igmp route "+mcast_g)
 clip("show ip mroute "+mcast_g)
