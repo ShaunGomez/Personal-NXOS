@@ -1,6 +1,7 @@
 import sys
 from cisco import cli
-# v1.2
+from cisco import clip
+# v2.0
 # Shaun Gomez
 #
 #clear all multicast state for given group on NXOS
@@ -13,3 +14,9 @@ cli("clear ip igmp route "+mcast_g)
 cli("clear ip igmp groups "+mcast_g)
 print 'All Multicast State Cleared For:'
 print mcast_g
+print 'Verification of State Clear'
+clip("show ip mroute "+mcast_g)
+clip("show ip pim route "+mcast_g)
+clip("show ip igmp groups "+mcast_g)
+clip("show ip igmp route "+mcast_g)
+print "Verification Complete"
