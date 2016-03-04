@@ -1,4 +1,5 @@
 import sys
+import time
 from cisco import cli
 from cisco import clip
 # v2.0
