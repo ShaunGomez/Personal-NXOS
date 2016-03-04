@@ -5,11 +5,11 @@
 **What are these files?**
 
 
-cmcast.py |
-Clear all multicast state for specific group (mcast_g)
+cmcast.py (arg) |
+Clear all multicast state for specific group (mcast_g) = x.x.x.x
 
-ll.py |
-Optical Light Levels for specific interface (eth_int)
+ll.py (arg) |
+Optical Light Levels for specific interface (eth_int) = Ethernetx/x or Ethx/x 
 
 
 **Usage**
