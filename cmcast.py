@@ -16,8 +16,8 @@ cli("clear ip mroute data-created "+mcast_g)
 cli("clear ip netstack mroute "+mcast_g)
 print 'All Multicast State Cleared For:'
 print mcast_g
-print 'Verification of State Clear, Please Wait 10 Seconds to Complete'
-for a in xrange(10,0,-1):
+print 'Verification of State Clear, Please Wait 3 Seconds to Complete'
+for a in xrange(3,0,-1):
 	time.sleep(1)
 	print a
 clip("show ip igmp groups "+mcast_g)
