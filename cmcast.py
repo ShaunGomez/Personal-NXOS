@@ -10,14 +10,14 @@ from cisco import clip
 #
 #
 mcast_g = str(sys.argv[1])
+cli("clear ip igmp groups "+mcast_g)
 cli("clear ip pim route "+mcast_g) 
 cli("clear ip mroute data-created "+mcast_g)
-cli("clear ip igmp route "+mcast_g)
-cli("clear ip igmp groups "+mcast_g)
+cli("clear ip netstack mroute "+mcast_g)
 print 'All Multicast State Cleared For:'
 print mcast_g
-print 'Verification of State Clear, Please Wait 45 Seconds to Complete'
-for a in xrange(45,0,-1):
+print 'Verification of State Clear, Please Wait 10 Seconds to Complete'
+for a in xrange(10,0,-1):
 	time.sleep(1)
 	print a
 clip("show ip igmp groups "+mcast_g)
