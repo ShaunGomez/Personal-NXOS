@@ -1,5 +1,6 @@
 **Python scripts for Cisco NXOS Platforms**
 
+** **
 
 **What are these files?**
 
@@ -39,6 +40,7 @@ Ethernet 1/1
 ** **   
   Rx Power      -30.00 dBm --    2.99 dBm  -21.54 dBm    0.00 dBm    -16.98 dBm
 
+** **
 
 If you find these scripts
 helpful and want to contribute or recommend something specific please contact
