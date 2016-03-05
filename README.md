@@ -14,8 +14,8 @@ Optical Light Levels for specific interface (eth_int) = Ethernetx/x or Ethx/x
 
 **Usage**
 
-These python scripts have been tested on the Nexus 3000, 5600, and 3500. They
-probably will work on any NXOS device (9500/9300/5500/7000/7700), but I have
+These python scripts have been tested on the Nexus 3000, 5600, and 3500. The scripts 
+*should* work on any python scripting NXOS device (9500/9300/5500/7000/7700), but I have
 not tested on those platforms. 
 
 Create a scripts directory on bootflash: (example:**_mkdir
