@@ -10,6 +10,6 @@ from cisco import clip
 #
 #
 eth_int = str(sys.argv[1])
-print "Returning optical light levels for " + eth_int
+    print "Returning optical light levels for " + eth_int
 a = clip("show interface " + eth_int + " trans detail | inc Tx|Rx")
-print a
+    print a
