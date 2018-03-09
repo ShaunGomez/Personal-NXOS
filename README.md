@@ -11,6 +11,9 @@ Clear all multicast state for specific group (mcast_g)
 ll.py |
 Optical Light Levels for specific interface (eth_int)
 
+allneighbors.py | 
+Discover CDP and LLDP neighbors with a single command
+
 
 **Usage**
 
