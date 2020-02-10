@@ -16,7 +16,9 @@ Discover both CDP and LLDP neighbors with a single command
 
 These python scripts have been tested on the Nexus 3000, 5600, and 3500. They
 probably will work on any NXOS device (9500/9300/5500/7000/7700), but I have
-not tested on those platforms. Keep in mind that Python 2.7 is what's installed on the Cisco NXOS Linux guestshell, so print commands will be in the older syntax. 
+not tested on those platforms. 
+
+**Keep in mind that Python 2.7 is what's installed on the Cisco NXOS Linux guestshell, so print commands will be in the older syntax.**
 
 Create a scripts directory on bootflash: (example:**_mkdir
 bootflash:python_scripts_**) and copy the script you want to use to this
