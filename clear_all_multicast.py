@@ -13,10 +13,11 @@ Usage:
     python bootflash:python_scripts/clear_all_multicast.py <multicast-group>
 
 CLI alias example:
-    cli alias name clr_mcast python bootflash:python_scripts/clear_all_multicast.py
+    cli alias name clr_mcast python
+    bootflash:python_scripts/clear_all_multicast.py
 
 Authors: Shaun Gomez & John Senkow
-Version: 3.0
+Version: 3.1
 """
 
 import sys
