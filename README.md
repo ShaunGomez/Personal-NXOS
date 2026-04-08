@@ -1,9 +1,8 @@
 # Personal-NXOS
 
-On-box Python 2.7 scripts for Cisco NX-OS platforms (Nexus 3000, 3500, 5600, and likely 9000/7000/5500).
+On-box Python scripts for Cisco NX-OS platforms (Nexus 3000, 3500, 5600, and likely 9000/7000/5500).
 
-> **Note:** These scripts use Python 2.7, which is the on-box interpreter for Cisco NX-OS.
-> `print` statements and `xrange` are intentional — do not convert to Python 3 syntax.
+> **Note:** These scripts use Python 3.9, which is the on-box interpreter for Cisco NX-OS.
 
 ---
 
