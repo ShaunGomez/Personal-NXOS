@@ -27,8 +27,8 @@ from cli import cli, clip
 def validate_args():
     """Validate that an interface argument was provided."""
     if len(sys.argv) < 2:
-        print "Usage: python light_levels.py <interface>"
-        print "Example: python light_levels.py eth1/1"
+        print ("Usage: python light_levels.py <interface>")
+        print ("Example: python light_levels.py eth1/1")
         sys.exit(1)
     return str(sys.argv[1])
 
