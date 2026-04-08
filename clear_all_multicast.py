@@ -22,9 +22,7 @@ Version: 4.0
 
 import sys
 import time
-from cisco import cli
-from cisco import clip
-
+from cli import cli, clip
 
 VERIFY_COUNTDOWN = 3
 
@@ -44,7 +42,6 @@ def clear_multicast_state(mcast_g):
     cli("clear ip igmp groups " + mcast_g)
     cli("clear ip pim route " + mcast_g)
     cli("clear ip mroute data-created " + mcast_g)
-    cli("clear ip netstack mroute " + mcast_g)
     print(f"All multicast state cleared for: {mcast_g}")
 
 
