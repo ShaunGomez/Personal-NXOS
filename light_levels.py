@@ -5,7 +5,7 @@ Executes 'show interface <intf> trans detail' filtered to Tx/Rx power levels
 and prints the result to the console.
 
 Prerequisites:
-    - NX-OS device with Python 2.7 (on-box interpreter)
+    - NX-OS device with Python 3.9 (on-box interpreter)
     - cisco module available (NX-OS SDK)
     - Interface must support optical transceiver (SFP/QSFP)
 
@@ -21,7 +21,7 @@ Version: 3.0
 """
 
 import sys
-from cisco import clip
+from cli import cli, clip
 
 
 def validate_args():
