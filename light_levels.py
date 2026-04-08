@@ -35,7 +35,7 @@ def validate_args():
 
 def show_light_levels(eth_int):
     """Display optical Tx/Rx power levels for the specified interface."""
-    print "Returning optical light levels for: " + eth_int
+    print "Returning optical light levels for:  + eth_int")
     clip("show interface " + eth_int + " trans detail | inc Tx|Rx")
 
 
