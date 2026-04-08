@@ -1,5 +1,5 @@
 """
-light_levels.py - Return optical light levels for a specified interface on NX-OS.
+light_levels.py - Optical light levels for a specified interface on NX-OS
 
 Executes 'show interface <intf> trans detail' filtered to Tx/Rx power levels
 and prints the result to the console.
