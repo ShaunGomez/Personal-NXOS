@@ -1,49 +1,120 @@
-**Examples of onbox python scripts for Cisco NXOS Platforms**
+# Personal-NXOS
 
-**What are these files?**
+On-box Python 2.7 scripts for Cisco NX-OS platforms (Nexus 3000, 3500, 5600, and likely 9000/7000/5500).
 
-clear_all_multicast.py |
-Clear all multicast state for specific group (mcast_g)
+> **Note:** These scripts use Python 2.7, which is the on-box interpreter for Cisco NX-OS.
+> `print` statements and `xrange` are intentional — do not convert to Python 3 syntax.
 
-light_levels.py |
-Optical Light Levels for specific interface (eth_int)
+---
 
-cdp_lldp_neighbors.py | 
-Discover both CDP and LLDP neighbors with a single command
+## Scripts
 
+| Script | Description |
+|---|---|
+| `clear_all_multicast.py` | Clear all multicast state for a specified group |
+| `light_levels.py` | Display optical Tx/Rx light levels for a specified interface |
+| `cdp_lldp_neighbors.py` | Display both CDP and LLDP neighbors in a single command |
 
-**Usage**
+---
 
-These python scripts have been tested on the Nexus 3000, 5600, and 3500. They
-probably will work on any NXOS device (9500/9300/5500/7000/7700), but I have
-not tested on those platforms. 
+## Installation
 
-**Keep in mind that Python 2.7 is what's installed on the Cisco NXOS Linux guestshell, so print commands will be in the older syntax.**
+1. Create a scripts directory on bootflash:
 
-Create a scripts directory on bootflash: (example:**_mkdir
-bootflash:python_scripts_**) and copy the script you want to use to this
-directory (USB/SCP/TFTP).
+```
+mkdir bootflash:python_scripts
+```
 
-I find it user friendly to use a cli alias that executes the script. 
+2. Copy the script to the device via SCP, TFTP, or USB:
 
-**Example:**
-cybertron-1(config)# **_cli alias name light
-python bootflash:python_scripts/light_levels.py_**
+```
+copy scp: bootflash:python_scripts/
+```
 
-**Execution:**
-cybertron-1(config)# **_light eth1/1_**
+3. Optionally, create a CLI alias for each script (see per-script examples below).
 
-**Result:**
-Returning optical light levels for ...
+---
 
-Ethernet 1/1
+## clear_all_multicast.py
 
-  Tx Power       -5.03 dBm       0.00 dBm  -13.56 dBm   -3.00 dBm     -9.50 dBm
-** **   
-  Rx Power      -30.00 dBm --    2.99 dBm  -21.54 dBm    0.00 dBm    -16.98 dBm
+Clears IGMP, PIM, mroute, and netstack state for a specified multicast group,
+then runs verification show commands to confirm the clear completed.
 
-** **
+### Usage
 
-If you find these scripts
-helpful and want to contribute or recommend something specific please contact
-me shaun@4g1vn.com
+```
+python bootflash:python_scripts/clear_all_multicast.py <multicast-group>
+```
+
+### CLI Alias
+
+```
+cli alias name clr_mcast python bootflash:python_scripts/clear_all_multicast.py
+```
+
+### Execution
+
+```
+clr_mcast 239.1.1.1
+```
+
+---
+
+## light_levels.py
+
+Returns optical Tx/Rx power levels for a specified interface using
+`show interface <intf> trans detail`.
+
+### Usage
+
+```
+python bootflash:python_scripts/light_levels.py <interface>
+```
+
+### CLI Alias
+
+```
+cli alias name light python bootflash:python_scripts/light_levels.py
+```
+
+### Execution & Output
+
+```
+cybertron-1# light eth1/1
+Returning optical light levels for: eth1/1
+
+  Tx Power   -5.03 dBm    0.00 dBm   -13.56 dBm   -3.00 dBm    -9.50 dBm
+  Rx Power  -30.00 dBm    2.99 dBm   -21.54 dBm    0.00 dBm   -16.98 dBm
+```
+
+---
+
+## cdp_lldp_neighbors.py
+
+Displays both CDP and LLDP neighbor tables in a single command. Useful in
+mixed-vendor environments where both protocols are active simultaneously.
+
+### Usage
+
+```
+python bootflash:python_scripts/cdp_lldp_neighbors.py
+```
+
+### CLI Alias
+
+```
+cli alias name sh_nei python bootflash:python_scripts/cdp_lldp_neighbors.py
+```
+
+### Execution
+
+```
+sh_nei
+```
+
+---
+
+## Contributing
+
+If you find these scripts helpful or want to suggest something specific,
+feel free to reach out: shaun@4g1vn.com
